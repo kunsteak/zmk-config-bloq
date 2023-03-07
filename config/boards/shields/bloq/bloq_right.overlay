@@ -1,5 +1,5 @@
 #include "bloq.dtsi"
 
 &default_transform {
-	col-offset = <19>;
+	col-offset = <18>;
 };

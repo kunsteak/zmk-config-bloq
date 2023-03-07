@@ -1,0 +1,145 @@
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/mouse.h>
+
+
+
+&mt {
+	tapping-term-ms = <250>;
+	flavor = "tap-preferred";
+};
+&sk {
+	release-after-ms = <2000>;
+	quick-release;
+};
+
+/* Layers */
+#define DEF 0
+#define SYM 1
+#define NAV 2	
+#define BLT 3
+/ { 
+	combos {
+		compatible = "zmk,combos";
+		combo_caps {
+			timeout-ms = <30>;
+			key-positions = <10 11 12>;
+			bindings = <&caps_word>;
+		};
+		combo_bt  {
+			timeout-ms = <10>;
+			key-positions = <10 12>;
+			bindings = <&to BT>;
+			layers = <SM1>; 
+		};
+	};
+
+	behaviors {
+		m_l: mods_left {
+			compatible = "zmk,behavior-hold-tap";
+			label = "MODS_L";
+			#binding-cells = <2>;
+			tapping-term-ms = <300>;
+			quick-tap-ms = <250>;
+			flavor = "tap-preferred";
+			bindings = <&kp>, <&kp>;
+			hold-trigger-key-positions = <0 1 2 3 4 10 11 12 13 14 20 21 22 23 24>; // left hand
+		};
+		m_r: mods_right {
+			compatible = "zmk,behavior-hold-tap";
+			label = "MODS_R";
+			#binding-cells = <2>;
+			tapping-term-ms = <300>;
+			quick-tap-ms = <250>;
+			flavor = "tap-preferred";
+			bindings = <&kp>, <&kp>;
+			hold-trigger-key-positions = <5 6 7 8 9 15 16 17 18 19 25 26 27 28 29>; // right hand
+		};
+		sr: shift_layer {
+			compatible = "zmk,behavior-hold-tap";
+			label = "SHIFT_LAYER";
+			#binding-cells = <2>;
+			tapping-term-ms = <300>;
+			quick_tap_ms = <0>;
+			flavor = "tap-preferred";
+			bindings = <&kp>, <&to>;
+			retro-tap;
+		};
+		l_l: layers_left {
+			compatible = "zmk,behavior-hold-tap";
+			label = "LAYERS_L";
+			#binding-cells = <2>;
+			tapping-term-ms = <220>;
+			quick-tap-ms = <250>;
+			flavor = "tap-preferred";
+			bindings = <&mo>, <&kp>;
+			hold-trigger-key-positions = <0 1 2 3 4 10 11 12 13 14 20 21 22 23 24>; // left hand
+		};
+		l_r: layers_right {
+			compatible = "zmk,behavior-hold-tap";
+			label = "LAYERS_R";
+			#binding-cells = <2>;
+			tapping-term-ms = <220>;
+			quick-tap-ms = <250>;
+			flavor = "tap-preferred";
+			bindings = <&mo>, <&kp>;
+			hold-trigger-key-positions = <5 6 7 8 9 15 16 17 18 19 25 26 27 28 29>; // right hand
+		};
+		td: tapdance {
+			compatible = "zmk,behavior-hold-tap";
+			label = "TAPDANCE";
+			#binding-cells = <2>;
+			tapping-term-ms = <190>;
+			quick-tap-ms = <250>;
+			flavor = "tap-preferred";
+			bindings = <&kp>, <&kp>;
+		};
+	};
+
+    //      00  01  02  03  04      05  06  07  08  09
+    //      10  11  12  13  14      15  16  17  18  19
+    //      20  21  22  23  24      25  26  27  28  29      
+    //              30  31  32      33  34  35
+
+	keymap {
+		compatible = "zmk,keymap";
+
+		default {
+			bindings = <
+            &td ESC Y     &kp C   &m_l LALT L   &m_l LGUI M   &kp K         &kp Z      &m_r RGUI F   &m_r RALT U      &td SEMI COMMA   &td DQT SQT
+            &kp I         &kp S   &kp R         &kp T         &kp G         &kp P      &kp N         &kp E            &kp A            &kp O
+            &m_l LCTL Q   &kp V   &kp W         &kp D         &kp J         &kp B      &kp H         &td QMARK FSLH   &td COLON DOT    &m_r RCTL X
+            &kp ESC   &l_l NAV TAB   &mt LC(LS(LALT)) SPC   &kp BSPC   &l_r SYM RET   &key_repeat
+			>;
+		};
+
+		sym {
+			bindings = <
+            &kp ESC     &kp LT      &kp GT      &kp LPAR   &kp RPAR         &td DOT COLON    &kp N1   &kp N2   &kp N3   &kp BSPC
+            &kp TILDE   &kp UNDER   &kp MINUS   &kp LBKT   &kp RBKT         &td COMMA SEMI   &kp N4   &kp N5   &kp N6   &kp RET
+            &kp GRAVE   &kp PIPE    &kp BSLH    &kp LBRC   &kp RBRC         &td MINUS PLUS   &kp N7   &kp N8   &kp N9   &kp N0
+            &kp TAB   &kp LSHFT   &kp SPC   &kp EQUAL   &kp RGUI   &kp RCTL
+			>;
+		};
+
+		nav {
+			bindings = <
+            &kp ESC    &kp LSHFT      &kp LGUI       &kp LALT    &td REDO UNDO         &kp DEL            &kp HOME    &kp UP      &kp END     &kp BSPC
+            &kp TAB    &kp LG(LBRC)   &kp RG(RBRC)   &mkp LCLK   &mkp RCLK             &td K_CUT K_COPY   &kp LEFT    &kp DOWN    &kp RIGHT   &kp RET
+            &kp LCTL   &kp LG(LBKT)   &kp LG(RBKT)   &none       &none                 &kp K_PASTE        &kp PG_UP   &kp PG_DN   &kp LNLCK   &none
+            &none   &none   &none   &none   &none   &none
+			>;
+		};
+
+		blt {
+			bindings = <
+            &none   &none   &none   &none   &none         &none   &none   &none   &none   &none
+            &none   &none   &none   &bootloader   &none         &none   &bootloader   &none   &none   &none
+            &none   &none   &none   &none   &none         &none   &none   &none   &none   &none
+            &to DEF   &to DEF   &to DEF   &to DEF   &to DEF   &to DEF
+			>;
+		};
+
+	};
+};

@@ -21,14 +21,14 @@
 		compatible = "zmk,combos";
 		combo_caps {
 			timeout-ms = <30>;
-			key-positions = <10 11 12>;
+			key-positions = <26 27 28>;
 			bindings = <&caps_word>;
 		};
 		combo_bt  {
 			timeout-ms = <10>;
-			key-positions = <10 12>;
-			bindings = <&to BT>;
-			layers = <SM1>; 
+			key-positions = <16 18>;
+			bindings = <&to BLT>;
+			layers = <SYM>;
 		};
 	};
 
@@ -131,9 +131,9 @@
 
 		blt {
 			bindings = <
-            &none   &none   &none   &none   &none         &none   &none   &none   &none   &none
-            &none   &none   &none   &bootloader   &none         &none   &bootloader   &none   &none   &none
-            &none   &none   &none   &none   &none         &none   &none   &none   &none   &none
+            &none    &none   &none   &none         &none         &none   &none         &none   &none   &none
+            &none    &none   &none   &bootloader   &none         &none   &bootloader   &none   &none   &none
+            &reset   &none   &none   &none         &none         &none   &none         &none   &none   &reset
             &to DEF   &to DEF   &to DEF   &to DEF   &to DEF   &to DEF
 			>;
 		};

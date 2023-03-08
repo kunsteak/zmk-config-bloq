@@ -136,9 +136,9 @@
 
         nav {
             bindings = <
-            &kp LSHFT   &kp LGUI       &kp LALT       &none   &none         &kp DEL            &kp HOME          &kp UP              &kp END     &kp PG_UP
-            &kp LNLCK   &kp LG(LBRC)   &kp RG(RBRC)   &none   &none         &td K_CUT K_COPY   &kp LEFT          &kp DOWN            &kp RIGHT   &kp PG_DN
-            &kp LCTL    &kp LG(LBKT)   &kp LG(RBKT)   &none   &none         &kp K_PASTE        &kp LC(LALT) UP   &kp LC(LALT) DOWN   &kp COMMA   &kp SEMI
+            &kp LSHFT   &kp LGUI       &kp LALT       &none   &none         &kp DEL            &kp HOME           &kp UP               &kp END     &kp PG_UP
+            &kp LNLCK   &kp LG(LBRC)   &kp RG(RBRC)   &none   &none         &td K_CUT K_COPY   &kp LEFT           &kp DOWN             &kp RIGHT   &kp PG_DN
+            &kp LCTL    &kp LG(LBKT)   &kp LG(RBKT)   &none   &none         &kp K_PASTE        &kp LC(LALT(UP))   &kp LC(LALT(DOWN))   &kp COMMA   &kp SEMI
             &trans   &trans   &trans                                        &trans   &trans   &trans
             >;
         };

@@ -118,10 +118,10 @@
 
         default {
             bindings = <
-            &kp Y   &m_l LCTL C   &m_l LALT L   &m_l LGUI M   &kp K         &kp Z   &m_r RGUI F   &m_r RALT U      &m_r RCTL COMMA   &td DQT SQT
-            &kp I   &l_l BLT S    &l_l SYM R    &l_l NAV T    &kp G         &kp P   &l_r NAV N    &l_r SYM E       &l_r BLT A        &kp O
-            &kp Q   &kp V         &kp W         &kp D         &kp J         &kp B   &kp H         &td QMARK FSLH   &kp DOT           &kp X
-            &kp ESC   &mt LC(LS(LALT)) SPC   &kp TAB                        &sk RSHFT   &kp BSPC   &kp RET
+            &kp Y     &m_l LCTL C   &m_l LALT L   &m_l LGUI M   &kp K         &kp Z   &m_r RGUI F   &m_r RALT U      &m_r RCTL COMMA   &td DQT SQT
+            &kp I     &l_l BLT S    &l_l SYM R    &l_l NAV T    &kp G         &kp P   &l_r NAV N    &l_r SYM E       &l_r BLT A        &kp O
+            &kp Q     &kp V         &kp W         &kp D         &kp J         &kp B   &kp H         &td QMARK FSLH   &kp DOT           &kp X
+            &kp TAB   &mt LC(LS(LALT)) SPC   &kp ESC                          &kp RET   &kp BSPC   &sk RSHFT
             >;
         };
 
@@ -130,7 +130,7 @@
             &kp ESC     &kp LT      &kp GT      &kp LPAR   &kp RPAR         &kp PLUS    &kp N1   &kp N2   &kp N3   &td SEMI COLON
             &kp TILDE   &kp UNDER   &kp MINUS   &kp LBKT   &kp RBKT         &kp MINUS   &kp N4   &kp N5   &kp N6   &kp EQUAL
             &kp GRAVE   &kp PIPE    &kp BSLH    &kp LBRC   &kp RBRC         &kp FSLH    &kp N7   &kp N8   &kp N9   &kp N0
-            &kp ESC   &mt LC(LS(LALT)) SPC   &kp TAB                        &sk RSHFT   &m_r RGUI BSPC   &m_r RCTL RET
+            &kp TAB   &mt LC(LS(LALT)) SPC   &kp ESC                        &m_r RCTL RET   &m_r RGUI BSPC   &sk RSHFT
             >;
         };
 

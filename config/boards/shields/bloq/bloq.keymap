@@ -48,8 +48,8 @@
         };
     };
 
-    // Yes, the hold-trigger-key-positions are mirrored so that the hand that
-    // is not responsible for a layer can be used (w/o delay) in said layer.
+    // The hold-trigger-key-positions are mirrored so that the hand that is not
+    // responsible for a layer can be used (w/o delay) in said layer.
 
     behaviors {
         m_l: mods_left {
@@ -122,37 +122,37 @@
 
         default {
             bindings = <
-            &kp Y     &m_l LCTL C   &m_l LALT L   &m_l LGUI M   &kp K      &kp Z   &m_r RGUI F   &m_r RALT U      &m_r RCTL COMMA   &td DQT SQT
-            &kp I     &l_l BLT S    &l_l SYM R    &l_l NAV T    &kp G      &kp P   &l_r NAV N    &l_r SYM E       &l_r BLT A        &kp O
-            &kp Q     &kp V         &kp W         &kp D         &kp J      &kp B   &kp H         &td QMARK FSLH   &td COLON DOT     &td SEMI X
-            &kp TAB   &mt LC(LS(LALT)) SPC   &kp ESC                       &kp RET   &kp BSPC   &sk RSHFT
+            &kp Y     &m_l LCTL C   &m_l LALT L   &m_l LGUI M   &l_l BLT K              &l_r BLT Z           &m_r RGUI F   &m_r RALT U      &m_r RCTL COMMA   &td DQT SQT
+            &kp I     &kp S         &kp R         &kp T         &kp G                   &kp P                &kp N         &kp E            &kp A        &kp O
+            &kp Q     &kp V         &kp W         &kp D         &mt LC(LS(LALT)) J      &mt LC(LS(LALT)) B   &kp H         &td QMARK FSLH   &td COLON DOT     &td SEMI X
+            &kp TAB   &l_l NAV SPC   &l_l SYM ESC                                       &l_r SYM RET   &l_r NAV BSPC   &sk RSHFT
             >;
         };
 
         sym {
             bindings = <
-            &kp ESC           &kp LT            &kp GT            &kp LPAR   &kp RPAR      &kp PLUS    &kp N1   &kp N2   &kp N3   &td SEMI COLON
-            &m_l LCTL TILDE   &m_l LALT UNDER   &m_l LGUI MINUS   &kp LBKT   &kp RBKT      &kp MINUS   &kp N4   &kp N5   &kp N6   &kp EQUAL
-            &kp GRAVE         &kp PIPE          &kp BSLH          &kp LBRC   &kp RBRC      &kp FSLH    &kp N7   &kp N8   &kp N9   &kp N0
-            &trans   &trans   &trans                                                       &m_r RCTL RET   &m_r RGUI BSPC   &sk RSHFT
+            &kp ESC     &m_l LCTL LT   &m_l LALT GT   &m_l LGUI LPAR   &kp RPAR      &kp FSLH    &td RS(N1) N1   &td RS(N2) N2   &td RS(N3) N3   &td SEMI COLON
+            &kp TILDE   &kp UNDER      &kp MINUS      &kp LBKT         &kp RBKT      &kp PLUS    &td RS(N4) N4   &td RS(N5) N5   &td RS(N6) N6   &kp N0
+            &kp GRAVE   &kp PIPE       &kp BSLH       &kp LBRC         &kp RBRC      &kp MINUS   &td RS(N7) N7   &td RS(N8) N8   &kp N9          &kp EQUAL
+            &trans   &kp SPC   &kp ESC                                               &kp RET   &kp BSPC   &trans
             >;
         };
 
         nav {
             bindings = <
-            &kp LSHFT   &kp LGUI       &kp LALT       &none   &none      &kp DEL               &kp HOME         &kp UP             &kp END     &kp PG_UP
-            &kp LNLCK   &kp LG(LBRC)   &kp RG(RBRC)   &none   &none      &td LG(X) LG(C)       &kp LEFT         &kp DOWN           &kp RIGHT   &kp PG_DN
-            &kp LCTL    &kp LG(LBKT)   &kp LG(RBKT)   &none   &none      &td LG(LA(V)) LG(V)   &kp RC(RA(UP))   &kp RC(RA(DOWN))   &kp COMMA   &kp SEMI
-            &trans   &trans   &trans                                     &trans   &trans   &trans
+            &kp LSHFT          &kp LCTL       &kp LALT       &kp LGUI   &none          &kp DEL               &kp HOME   &kp UP     &kp END     &kp PG_UP
+            &kp RC(RA(UP))     &kp LG(LBRC)   &kp RG(RBRC)   &none      &none          &td LG(X) LG(C)       &kp LEFT   &kp DOWN   &kp RIGHT   &kp PG_DN
+            &kp RC(RA(DOWN))   &kp LG(LBKT)   &kp LG(RBKT)   &none      &kp LNLCK      &td LG(LA(V)) LG(V)   &none      &none      &kp COMMA   &kp SEMI
+            &trans   &kp SPC   &kp ESC                                                 &kp RET   &kp BSPC   &trans
             >;
         };
 
         blt {
             bindings = <
-            &none    &none   &none   &none          &out OUT_BLE      &out OUT_BLE   &none         &none   &none   &none
-            &none    &none   &none   &bootloader    &none             &none          &bootloader   &none   &none   &none
-            &reset   &none   &none   &none          &none             &none          &none         &none   &none   &reset
-            &none   &none   &none                                     &none   &none   &none
+            &out OUT_BLE   &none   &none   &none         &none      &none   &none         &none   &none   &out OUT_BLE
+            &none          &none   &none   &bootloader   &none      &none   &bootloader   &none   &none   &none
+            &reset         &none   &none   &none         &none      &none   &none         &none   &none   &reset
+            &none   &none   &none                                   &none   &none   &none
             >;
         };
 

@@ -123,8 +123,8 @@
         default {
             bindings = <
             &kp Y     &m_l LCTL C   &m_l LALT L   &m_l LGUI M   &l_l BLT K              &l_r BLT Z           &m_r RGUI F   &m_r RALT U      &m_r RCTL COMMA   &td DQT SQT
-            &kp I     &kp S         &kp R         &kp T         &kp G                   &kp P                &kp N         &kp E            &kp A        &kp O
-            &kp Q     &kp V         &kp W         &kp D         &mt LC(LS(LALT)) J      &mt LC(LS(LALT)) B   &kp H         &td QMARK FSLH   &td COLON DOT     &td SEMI X
+            &kp I     &kp S         &kp R         &kp T         &mt LC(LS(LALT)) G      &mt LC(LS(LALT)) P                &kp N         &kp E            &kp A        &kp O
+            &kp Q     &kp V         &kp W         &kp D         &kp J                   &kp B   &kp H         &td QMARK FSLH   &td COLON DOT     &td SEMI X
             &kp TAB   &l_l NAV SPC   &l_l SYM ESC                                       &l_r SYM RET   &l_r NAV BSPC   &sk RSHFT
             >;
         };
